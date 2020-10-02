@@ -1,0 +1,12 @@
+RewriteEngine on
+
+#Đặt URL cơ sở để viết lại từng thư mục
+RewriteBase /project_mvc/
+
+#Xác định điều kiện mà việc viết lại sẽ diễn ra
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !#
+RewriteCond %{REQUEST_URI} !(.*)/$
+
+#Xác định các quy tắc cho công cụ viết lại
+RewriteRule ^(.+)/?$ index.php?url=$1 
